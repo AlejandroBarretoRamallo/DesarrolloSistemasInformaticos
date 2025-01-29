@@ -1,1 +1,0 @@
-# Este repositorio contiene todas las practicas realizadas en la asignatura de desarrollo de sistemas informaticos
