@@ -71,8 +71,9 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
   ![](./images/IP.png)
 
 5. Una vez obtenemos la IP, podemos establecer una conexion ssh desde nuestra terminal de linux
-        Ademas d epedirnos la contraseña, al ser la primera vez nos preguntara si queremos guardar este 
+        Ademas de pedirnos la contraseña, al ser la primera vez nos preguntara si queremos guardar este 
         host, y pondremos 'yes'
+        
         ```
         ale@Asusbarreto:~$ ssh usuario@10.6.129.150
         The authenticity of host '10.6.129.150 (10.6.129.150)' can't be established.
