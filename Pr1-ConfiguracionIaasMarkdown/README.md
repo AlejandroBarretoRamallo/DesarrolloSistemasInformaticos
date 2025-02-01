@@ -53,7 +53,7 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
 3. Introducimos el nombre de usuario y a contraseña(usuarioen ambos casos) y cambiamos la contraseña por defecto a una nueva
 ![](./images/password.png)
 4. Ahora debemos abrir la temrinal a traves de la consola VNC.
-Debemos instaalr las net-tools y obtener la direccion de nuestra maquina 
+Debemos instalar las net-tools y obtener la direccion de nuestra maquina 
 con los siguientes comandos: 
 ```
 sudo apt install net-tools
@@ -61,7 +61,7 @@ sudo apt install net-tools
 ifconfig -a
 ```
 Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comando
-[Aquí podemos comprobar, al lado de inet, que la direccion IP es 10.6.129.150](./images/IP.png)
+![Aquí podemos comprobar, al lado de inet, que la direccion IP es 10.6.129.150](./images/IP.png)
 5. Una vez obtenemos la IP, podemos establecer una conexion ssh desde nuestra terminal de linux
 Ademas d epedirnos la contraseña, al ser la primera vez nos preguntara si queremos guardar este 
 host, y pondremos 'yes'
