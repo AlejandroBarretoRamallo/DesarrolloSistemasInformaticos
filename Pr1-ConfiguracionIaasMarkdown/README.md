@@ -61,12 +61,13 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
 4. Ahora debemos abrir la temrinal a traves de la consola VNC.
         Debemos instalar las net-tools y obtener la direccion de nuestra maquina 
         con los siguientes comandos: 
-        
+
         ```
         sudo apt install net-tools
         ...
         ifconfig -a
         ```
+        
         Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comando
 
   ![](./images/IP.png)
