@@ -117,7 +117,8 @@ Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comand
 
 6. Modificamos el nombre de host de la máquina virtual, modificando
    dos ficheros: /etc/hostname y /etc/hosts
-   */etc/hosts*
+   
+   */etc/hostname*
 
    ```
    usuario@ubuntu:~$ cat /etc/hostname
