@@ -216,7 +216,7 @@ la direccioó IP es 10.6.129.150
 
     ```
     ale@Asusbarreto:~$ ssh-copy-id usuario@DSI
-    /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ale/.ssh/id_ed25519.pub"
+    /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ale/.ssh/id_XXXXXX.pub"
     /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
     /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
     usuario@dsi's password:
@@ -261,7 +261,46 @@ la direccioó IP es 10.6.129.150
     Last login: Sat Feb  1 17:49:53 2025 from 10.20.51.7
     usuario@DSI:~$
     ```
-11. 
+11. En mi caso, como voy a trabajar con VSCode, no me importa tener que añadir
+    la palabra usuario, por tanto omitiremos este paso
 
+12. Generamos una clave público-privada en la máquina virtual
+    
+    ```
+    usuario@DSI:~$ ssh-keygen
+    Generating public/private XXXXX key pair.
+    Enter file in which to save the key (/home/usuario/.ssh/id_XXXXX):
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
+    Your identification has been saved in /home/usuario/.ssh/id_XXXXX
+    Your public key has been saved in /home/usuario/.ssh/id_XXXXX.pub
+    The key fingerprint is: ------------
+    ...
+    usuario@DSI:~$ cd .ssh/
+    usuario@DSI:~/.ssh$ ls
+    authorized_keys  id_edXXXXX  id_edXXXXX.pub
+    ```
 
+## Instalación de Git y Node
+
+### Git
+
+- Instalamos git en nuestra máquina virtual`
+  
+  ```
+  usuario@DSI:~$ sudo apt install git
+  [sudo] password for usuario:
+  Leyendo lista de paquetes... Hecho
+  Creando árbol de dependencias... Hecho
+  Leyendo la información de estado... Hecho
+  git ya está en su versión más reciente (1:2.43.0-1ubuntu7.2).
+  fijado git como instalado manualmente.
+  0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 188 no actualizados.
+  ```
+
+  Como podemos ver, git ya estaba descargado en su ultima versión
+  
+- 
+
+  
 
