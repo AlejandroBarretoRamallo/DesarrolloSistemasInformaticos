@@ -52,7 +52,7 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
 
 2. Tomamos la maquina virtual y la encendemos
 
-  ![IP:10.6.131.156](./images/maquina.png)
+  ![](./images/maquina.png)
 
 3. Introducimos el nombre de usuario y a contraseña(usuarioen ambos casos) y cambiamos la contraseña por defecto a una nueva
 
@@ -67,8 +67,8 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
         ifconfig -a
         ```
         Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comando
-        
-        ![Aquí podemos comprobar, al lado de inet, que la direccion IP es 10.6.129.150](./images/IP.png)
+
+  ![](./images/IP.png)
 
 5. Una vez obtenemos la IP, podemos establecer una conexion ssh desde nuestra terminal de linux
         Ademas d epedirnos la contraseña, al ser la primera vez nos preguntara si queremos guardar este 
