@@ -32,10 +32,10 @@ ale@Asusbarreto:~/DesarrolloSistemasInformaticos$ cat ../.gitconfig
 ### Github Education
 En nuestro caso ya hemos solicitado previamente para otras asignaturas
 estos beneficios
-[Cuenta de github](./images/Github%20education.png)
+![Cuenta de github](./images/Github%20education.png)
 ### Aceptamos el Github classroom
 Completamos la asignacion al classroom de github
-[](./images/Classroom.png)
+![](./images/Classroom.png)
 ### Introducción a makrdown
 Los conocimientos basicos para poder desarrollar en markdonw son:
 - #_Titulo nos permite crear titulos
@@ -51,7 +51,7 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
 2. Tomamos la maquina virtual y la encendemos
 ![IP:10.6.131.156](./images/maquina.png)
 3. Introducimos el nombre de usuario y a contraseña(usuarioen ambos casos) y cambiamos la contraseña por defecto a una nueva
-[](./images/password.png)
+![](./images/password.png)
 4. Ahora debemos abrir la temrinal a traves de la consola VNC.
 Debemos instaalr las net-tools y obtener la direccion de nuestra maquina 
 con los siguientes comandos: 
