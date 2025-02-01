@@ -61,6 +61,7 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
 4. Ahora debemos abrir la temrinal a traves de la consola VNC.
         Debemos instalar las net-tools y obtener la direccion de nuestra maquina 
         con los siguientes comandos: 
+        
         ```
         sudo apt install net-tools
         ...
@@ -73,7 +74,7 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
 5. Una vez obtenemos la IP, podemos establecer una conexion ssh desde nuestra terminal de linux
         Ademas de pedirnos la contraseña, al ser la primera vez nos preguntara si queremos guardar este 
         host, y pondremos 'yes'
-        
+
         ```
         ale@Asusbarreto:~$ ssh usuario@10.6.129.150
         The authenticity of host '10.6.129.150 (10.6.129.150)' can't be established.
