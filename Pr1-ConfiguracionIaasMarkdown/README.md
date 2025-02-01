@@ -67,8 +67,8 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
         ...
         ifconfig -a
         ```
-        
-        Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comando
+
+Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comando
 
   ![](./images/IP.png)
 
