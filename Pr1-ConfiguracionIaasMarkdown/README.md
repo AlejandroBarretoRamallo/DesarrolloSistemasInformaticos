@@ -285,7 +285,7 @@ la direccioó IP es 10.6.129.150
 
 ### Git
 
-- Instalamos git en nuestra máquina virtual`
+- Instalamos git en nuestra máquina virtual
   
   ```
   usuario@DSI:~$ sudo apt install git
@@ -344,7 +344,7 @@ la direccioó IP es 10.6.129.150
   ssh-XXXXX AAAAC3NzaC1lZDI1NTE5AAAAIGm1ss7DRHNmPx1loqjrI2djJL20VOrrjNmpLc7RX9t/ usuario@DSI
   ```
 
-  Ahora comprobamos que nos deja cloanr el repositorio compartido
+  Comprobamos que nos deja clonar el repositorio compartido
   y nos aparece la rama main
 
   ```
@@ -364,9 +364,84 @@ la direccioó IP es 10.6.129.150
   usuario@DSI:~/prct01-iaas-AlejandroBarretoRamallo~/prct01-iaas-AlejandroBarretoRamallo (main) $
   ```
   
-  Efectivamente vemos que al final del prompt podemos ver que estams en la rama main
+  Efectivamente vemos que al final del prompt podemos ver que estamos en la rama main
 
 ### Node.js
 
-- 
+- Primero debemos de descargar un archivo, ejecutar bash y comprobar la versión de 
+  nvm, que es el gestor de versiones de Node
+
+  ```
+  usuario@DSI:~~ $ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  => Downloading nvm from git to '/home/usuario/.nvm'
+  => Cloning into '/home/usuario/.nvm'...
+  remote: Enumerating objects: 380, done.
+  remote: Counting objects: 100% (380/380), done.
+  remote: Compressing objects: 100% (323/323), done.
+  remote: Total 380 (delta 43), reused 178 (delta 29), pack-reused 0 (from 0)
+  Receiving objects: 100% (380/380), 382.75 KiB | 1.93 MiB/s, done.
+  Resolving deltas: 100% (43/43), done.
+  * (HEAD detached at FETCH_HEAD)
+    master
+  => Compressing and cleaning up git repository
+  
+  => Appending nvm source string to /home/usuario/.bashrc
+  => Appending bash_completion source string to /home/usuario/.bashrc
+  => Close and reopen your terminal to start using nvm or run the following to use it now:
+  
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  usuario@DSI:~~ $ exec bash -l
+  usuario@DSI:~~ $ nvm --version
+  0.39.1
+  usuario@DSI:~~ $
+  ```
+
+  Podemos comrpobar que s einstaló correctamente ya que tenemos la version 0.39.1
+
+- A continuación, instalamos la version más reciente de Node y del gestor de paquetes
+  de Node(npm)
+
+  ```
+  usuario@DSI:~~ $ nvm install node
+  Downloading and installing node v23.7.0...
+  Downloading https://nodejs.org/dist/v23.7.0/node-v23.7.0-linux-x64.tar.xz...
+  ################################################################################################################# 100.0%
+  Computing checksum with sha256sum
+  Checksums matched!
+  Now using node v23.7.0 (npm v10.9.2)
+  Creating default alias: default -> node (-> v23.7.0)
+  usuario@DSI:~~ $ node --version
+  v23.7.0
+  usuario@DSI:~~ $ npm --version
+  10.9.2
+  ```
+
+  En efecto podemos comprobar que tenemos la ultima version de Node(23.7.0)
+  y de npm(10.9.2)
+
+- Finalmente, si quisieramos cambair de versión
+  podemos comprobar las disponibles asi
+
+  ```
+  usuario@DSI:~~ $ nvm list
+  ->      v23.7.0
+  default -> node (-> v23.7.0)
+  iojs -> N/A (default)
+  unstable -> N/A (default)
+  node -> stable (-> v23.7.0) (default)
+  stable -> 23.7 (-> v23.7.0) (default)
+  lts/* -> lts/jod (-> N/A)
+  lts/argon -> v4.9.1 (-> N/A)
+  lts/boron -> v6.17.1 (-> N/A)
+  lts/carbon -> v8.17.0 (-> N/A)
+  lts/dubnium -> v10.24.1 (-> N/A)
+  lts/erbium -> v12.22.12 (-> N/A)
+  lts/fermium -> v14.21.3 (-> N/A)
+  lts/gallium -> v16.20.2 (-> N/A)
+  lts/hydrogen -> v18.20.6 (-> N/A)
+  lts/iron -> v20.18.2 (-> N/A)
+  lts/jod -> v22.13.1 (-> N/A)
+  ```
 
