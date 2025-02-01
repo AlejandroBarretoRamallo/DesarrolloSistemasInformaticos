@@ -13,6 +13,7 @@
 ![](./images/repo.png)
 
 ### Creación de cuenta de github
+
 En nuestro caso, ya disponemos de una cuenta de github
 
 ```
@@ -32,13 +33,18 @@ ale@Asusbarreto:~/DesarrolloSistemasInformaticos$ cat ../.gitconfig
 ```
 
 ### Github Education
+
 En nuestro caso ya hemos solicitado previamente para otras asignaturas
 estos beneficios
 ![](./images/Github%20education.png)
+
 ### Aceptamos el Github classroom
+
 Completamos la asignación al classroom de github
 ![](./images/Classroom.png)
+
 ### Introducción a makrdown
+
 Los conocimientos basicos para poder desarrollar en markdonw son:
 - #_Titulo nos permite crear titulos
 - ##-###-###... para anidar niveles de 
@@ -46,6 +52,7 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
 - Utilizar numeros(1. 2. 3.) para crear una lista enumerada
 - Utilizar comillas (```) entre bloques de codigo
 - Utilizar [] y parentesis() para añadir imagenes o enlaces
+
 ## Configuración de la máquina
 
 1. Acceso al servicio Iaas de la ull 
@@ -437,4 +444,6 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
   lts/iron -> v20.18.2 (-> N/A)
   lts/jod -> v22.13.1 (-> N/A)
   ```
+
+
 
