@@ -68,7 +68,8 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
         ifconfig -a
         ```
 
-Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comando
+Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comando.Podemos ver que
+la direccion IP es 10.6.129.150
 
   ![](./images/IP.png)
 
@@ -169,5 +170,6 @@ Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comand
    Connection to 10.6.129.150 closed.
    ```
 
-8. 
+8. Ponemos la maquina virtual en la lista de hosts de la maquina local
+
 
