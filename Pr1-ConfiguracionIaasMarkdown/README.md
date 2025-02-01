@@ -129,5 +129,5 @@ Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comand
    usuario@ubuntu:~$
    ```
 
-*/etc/hosts*
+   */etc/hosts*
 
