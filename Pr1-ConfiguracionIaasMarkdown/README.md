@@ -299,8 +299,74 @@ la direccioó IP es 10.6.129.150
   ```
 
   Como podemos ver, git ya estaba descargado en su ultima versión
-  
-- 
 
+- Configuramos git con algunos datos con nuestro nombre y nuestro correo,
+  utilizaremos el nombre de nuestra cuenta de github(AlejandroBarretoRamallo)
+  y nuestro correo asociaod a la cuenta(alu0101552774@ull.edu.es)
+
+  ```
+  usuario@DSI:~$ git config --global user.name "AlejandroBarretoRamallo"
+  usuario@DSI:~$ git config --global user.email "alu0101552774@ull.edu.es"
+  usuario@DSI:~$ git config --list
+  user.name=AlejandroBarretoRamallo
+  user.email=alu0101552774@ull.edu.es
+  usuario@DSI:~$
+  ```
+
+- Cambiamos el prompt para que nos indique la rama actual
+  Para ello debemos de descarrgar un archivo, ponerlo en oculto
+  añadiendo un . al princpio del nombre del archivo,
+  y modificando el .bashrc
+
+  ```
+  usuario@DSI:~$ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+  --2025-02-01 18:39:04--  https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+  Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.111.133, 185.199.110.133, ...
+  Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+  HTTP request sent, awaiting response... 200 OK
+  Length: 21338 (21K) [text/plain]
+  Saving to: ‘git-prompt.sh’
   
+  git-prompt.sh                 100%[=================================================>]  20,84K  --.-KB/s    in 0,005s
+  
+  2025-02-01 18:39:04 (4,18 MB/s) - ‘git-prompt.sh’ saved [21338/21338]
+  
+  usuario@DSI:~$ mv git-prompt.sh .git-prompt.sh
+  usuario@DSI:~$ vi .bashrc
+  usuario@DSI:~$ vi .bashrc
+  usuario@DSI:~$ exec bash -l
+  usuario@DSI:~~ $
+  ```
+
+- Ahora copiamos la clave ssh para añadirla al github
+  ```
+  usuario@DSI:~~ $ cat .ssh/id_XXXXX.pub
+  ssh-XXXXX AAAAC3NzaC1lZDI1NTE5AAAAIGm1ss7DRHNmPx1loqjrI2djJL20VOrrjNmpLc7RX9t/ usuario@DSI
+  ```
+
+  Ahora comprobamos que nos deja cloanr el repositorio compartido
+  y nos aparece la rama main
+
+  ```
+  usuario@DSI:~~ $ git clone git@github.com:ULL-ESIT-INF-DSI-2425/prct01-iaas-AlejandroBarretoRamallo.git
+  Cloning into 'prct01-iaas-AlejandroBarretoRamallo'...
+  The authenticity of host 'github.com (140.82.121.4)' can't be established.
+  XXXXX key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+  This key is not known by any other names.
+  Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+  Warning: Permanently added 'github.com' (XXXXX) to the list of known hosts.
+  remote: Enumerating objects: 3, done.
+  remote: Counting objects: 100% (3/3), done.
+  remote: Compressing objects: 100% (2/2), done.
+  remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+  Receiving objects: 100% (3/3), done.
+  usuario@DSI:~~ $ cd prct01-iaas-AlejandroBarretoRamallo/
+  usuario@DSI:~/prct01-iaas-AlejandroBarretoRamallo~/prct01-iaas-AlejandroBarretoRamallo (main) $
+  ```
+  
+  Efectivamente vemos que al final del prompt podemos ver que estams en la rama main
+
+### Node.js
+
+- 
 
