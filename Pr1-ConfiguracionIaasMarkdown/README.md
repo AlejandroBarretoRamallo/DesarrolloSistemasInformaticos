@@ -117,7 +117,7 @@ Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comand
 
 6. Modificamos el nombre de host de la máquina virtual, modificando
    dos ficheros: /etc/hostname y /etc/hosts
-   
+
    */etc/hostname*
 
    ```
@@ -131,4 +131,43 @@ Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comand
    ```
 
    */etc/hosts*
+
+   ```
+   usuario@ubuntu:~$ cat /etc/hosts
+   127.0.0.1 localhost
+   127.0.1.1 ubuntu
+   
+   # The following lines are desirable for IPv6 capable hosts
+   ::1     ip6-localhost ip6-loopback
+   fe00::0 ip6-localnet
+   ff00::0 ip6-mcastprefix
+   ff02::1 ip6-allnodes
+   ff02::2 ip6-allrouters
+   usuario@ubuntu:~$ sudo vi /etc/hosts
+   usuario@ubuntu:~$ cat /etc/hosts
+   127.0.0.1 localhost
+   127.0.1.1 DSI
+   
+   # The following lines are desirable for IPv6 capable hosts
+   ::1     ip6-localhost ip6-loopback
+   fe00::0 ip6-localnet
+   ff00::0 ip6-mcastprefix
+   ff02::1 ip6-allnodes
+   ff02::2 ip6-allrouters
+   usuario@ubuntu:~$
+   ```
+
+7. Reiniciamos la máquina virtual
+   ```
+   usuario@ubuntu:~$ sudo reboot
+
+   Broadcast message from root@ubuntu on pts/1 (Sat 2025-02-01 17:41:23 UTC):
+   
+   The system will reboot now!
+   
+   usuario@ubuntu:~$ Connection to 10.6.129.150 closed by remote host.
+   Connection to 10.6.129.150 closed.
+   ```
+
+8. 
 
