@@ -115,5 +115,19 @@ Al ejecutar con sudo, nos pedira la contraseña para poder ejecutar dicho comand
         Last login: Mon Jul 15 12:20:52 2024 from 10.107.1.25
         ```
 
-6. Modificamos el nombre de host de la máquina virtual
+6. Modificamos el nombre de host de la máquina virtual, modificando
+   dos ficheros: /etc/hostname y /etc/hosts
+   */etc/hosts*
+
+   ```
+   usuario@ubuntu:~$ cat /etc/hostname
+   ubuntu
+   usuario@ubuntu:~$ sudo vi /etc/hostname
+   [sudo] password for usuario:
+   usuario@ubuntu:~$ cat /etc/hostname
+   DSI
+   usuario@ubuntu:~$
+   ```
+
+*/etc/hosts*
 
