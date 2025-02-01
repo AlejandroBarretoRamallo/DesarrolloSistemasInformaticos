@@ -227,7 +227,7 @@ la direccioó IP es 10.6.129.150
     and check to make sure that only the key(s) you wanted were added.
     ```
 
-Ahora podemos comprobar que nos permite acceder a la máquina sin necesidad de indicar la contraseña
+    Ahora podemos comprobar que nos permite acceder a la máquina sin necesidad de indicar la contraseña
 
     ```
     ale@Asusbarreto:~$ ssh usuario@DSI
