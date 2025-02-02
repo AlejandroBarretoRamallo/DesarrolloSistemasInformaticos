@@ -21,13 +21,13 @@
   ```
 
 - En mi caso, ya llevo bastante tiempo usando el Visual Studio Code, por 
-  lo que ahora comenzaremos a onfigurar el visual en la áquina virtual
+  lo que ahora comenzaremos a configurar el visual en la máquina virtual
 
 ## Configuración de visual studio Code
 
 - Como ya realizamos la práctica uno, ya somos capaces de acceder cómodamente
   a la máquina virtual a través del ssh. Aquí se puede observar todo el 
   proceso
-  [Conexión ssh](https://ull-esit-inf-dsi-2425.github.io/prct01-iaas-AlejandroBarretoRamallo/)
+  [Conexión ssh:](https://ull-esit-inf-dsi-2425.github.io/prct01-iaas-AlejandroBarretoRamallo/)
 
 - 
