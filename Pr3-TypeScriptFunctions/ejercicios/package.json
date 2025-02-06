@@ -1,0 +1,33 @@
+{
+  "name": "ejercicios",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "format": "npx prettier --write \"src/**/*.{ts,js,html,css}\"",
+    "eslint": "npx eslint \"src/**/*.{ts,js}\" --fix",
+    "run:ej1": "tsc-watch --onSuccess \"node dist/UnSoloGolpe.js\"",
+    "run:ej2": "tsc-watch --onSuccess \"node dist/TarjetasCredito.js\"",
+    "run:ej3": "tsc-watch --onSuccess \"node dist/SeñalesCorporales.js\"",
+    "run:ej4": "tsc-watch --onSuccess \"node dist/Collatz.js\"",
+    "run:ej5": "tsc-watch --onSuccess \"node dist/Tripletas.js\"",
+    "run:ej6": "tsc-watch --onSuccess \"node dist/Asterix.js\"",
+    "run:ej7": "tsc-watch --onSuccess \"node dist/Triangulos.js\"",
+    "run:ej8": "tsc-watch --onSuccess \"node dist/Cifrado.js\"",
+    "run:ej9": "tsc-watch --onSuccess \"node dist/Racionales.js\"",
+    "run:ej10": "tsc-watch --onSuccess \"node dist/Funciones.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "tsc-watch": "^6.2.1",
+    "typescript-eslint": "^8.23.0"
+  }
+}
