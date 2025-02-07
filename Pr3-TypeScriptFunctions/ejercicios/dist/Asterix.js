@@ -8,13 +8,13 @@ function romanToDecimal(string) {
     if (/(IL|IC|ID|IM|VX|VL|VC|VD|VM|XD|XM|LC|LD|LM)/.test(string))
         return undefined;
     const romanValues = [
-        { value: 1000, roman: 'M' },
-        { value: 500, roman: 'D' },
-        { value: 100, roman: 'C' },
-        { value: 50, roman: 'L' },
-        { value: 10, roman: 'X' },
-        { value: 5, roman: 'V' },
-        { value: 1, roman: 'I' },
+        { value: 1000, roman: "M" },
+        { value: 500, roman: "D" },
+        { value: 100, roman: "C" },
+        { value: 50, roman: "L" },
+        { value: 10, roman: "X" },
+        { value: 5, roman: "V" },
+        { value: 1, roman: "I" },
     ];
     let number = 0;
     for (let i = 0; i < string.length; i++) {
@@ -48,21 +48,21 @@ function decimalToRoman(number) {
     if (number < 1 || number % 1 !== 0) {
         return undefined;
     }
-    let roman = '';
+    let roman = "";
     const romanValues = [
-        { value: 1000, roman: 'M' },
-        { value: 900, roman: 'CM' },
-        { value: 500, roman: 'D' },
-        { value: 400, roman: 'CD' },
-        { value: 100, roman: 'C' },
-        { value: 90, roman: 'XC' },
-        { value: 50, roman: 'L' },
-        { value: 40, roman: 'XL' },
-        { value: 10, roman: 'X' },
-        { value: 9, roman: 'IX' },
-        { value: 5, roman: 'V' },
-        { value: 4, roman: 'IV' },
-        { value: 1, roman: 'I' },
+        { value: 1000, roman: "M" },
+        { value: 900, roman: "CM" },
+        { value: 500, roman: "D" },
+        { value: 400, roman: "CD" },
+        { value: 100, roman: "C" },
+        { value: 90, roman: "XC" },
+        { value: 50, roman: "L" },
+        { value: 40, roman: "XL" },
+        { value: 10, roman: "X" },
+        { value: 9, roman: "IX" },
+        { value: 5, roman: "V" },
+        { value: 4, roman: "IV" },
+        { value: 1, roman: "I" },
     ];
     while (number > 0) {
         for (let i = 0; i < romanValues.length; i++) {

@@ -3,13 +3,13 @@ function getTypeTriangle(a, b, c) {
         return undefined;
     }
     if (a === b && b === c) {
-        return 'Equilátero';
+        return "Equilátero";
     }
     else if (a == b || a == c || b == c) {
-        return 'Isósceles';
+        return "Isósceles";
     }
     else {
-        return 'Escaleno';
+        return "Escaleno";
     }
 }
 console.log(getTypeTriangle(7, 7, 7));

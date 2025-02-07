@@ -1,18 +1,21 @@
 function checkCreditCard(number: string | number): string | undefined {
-  let str_number = "";
-  if (typeof number === "number") {
-    str_number = number.toString();
-  } else {
-    str_number = number;
-  }
+  let str_number = typeof number === "number" ? number.toString() : number;
   str_number = str_number.replace(/ /g, "");
-  if (str_number.length != 16) {
+  if (!/^\d{16}$/.test(str_number)) {
     return undefined;
   }
   let sum = 0;
-  for (let i = 0; i < str_number.length; i = i + 2) {
-    let toSum = Number(str_number[i]) * 2;
-    toSum > 9 ? (toSum -= 9) : (sum += toSum);
+  let alternate = false;
+  for (let i = str_number.length - 1; i >= 0; i--) {
+    let digit = Number(str_number[i]);
+    if (alternate) {
+      digit *= 2;
+      if (digit > 9) {
+        digit -= 9;
+      }
+    }
+    sum += digit;
+    alternate = !alternate;
   }
   return sum % 10 === 0 ? "valid" : "notValid";
 }

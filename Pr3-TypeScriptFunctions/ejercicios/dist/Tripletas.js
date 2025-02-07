@@ -2,7 +2,7 @@ function getTriplets(number) {
     if (number < 1 || number % 1 !== 0) {
         return undefined;
     }
-    let triplets = '';
+    let triplets = "";
     for (let a = 1; a < number / 3; ++a) {
         for (let b = a + 1; b < number / 2; b++) {
             let c = number - a - b;
