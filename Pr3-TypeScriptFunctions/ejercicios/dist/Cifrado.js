@@ -1,5 +1,9 @@
 function squareEncoding(text) {
-    text = text.replace(/[\W]/g, "").toLowerCase();
+    const accents = { á: "a", é: "e", í: "i", ó: "o", ú: "u", ü: "u" };
+    text = text
+        .toLocaleLowerCase()
+        .replace(/[áéíóúü]/gi, (match) => accents[match])
+        .replace(/[\W_]/g, "");
     let columns = 0;
     let rows = Math.floor(Math.sqrt(text.length));
     if (rows * rows >= text.length) {

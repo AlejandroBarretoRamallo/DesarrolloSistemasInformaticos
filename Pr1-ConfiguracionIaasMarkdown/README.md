@@ -79,7 +79,7 @@ Los conocimientos basicos para poder desarrollar en markdonw son:
    ```
 
    Al ejecutar con sudo, nos pedirá la contraseña para poder ejecutar dicho comando.Podemos ver que
-   la direccioó IP es 10.6.129.150
+   la dirección IP es 10.6.129.150
 
    ![](./images/IP.png)
 
