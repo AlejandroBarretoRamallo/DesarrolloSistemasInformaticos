@@ -81,3 +81,10 @@ console.log(romanToDecimal("MMXXIV"));
 console.log(decimalToRoman(1995));
 console.log(decimalToRoman(2014));
 console.log(decimalToRoman(-1995));
+
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+let myAdditions = [add(8, 9), add(1, 7), add(20, 43), "17"];
