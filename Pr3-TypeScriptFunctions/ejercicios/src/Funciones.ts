@@ -1,4 +1,4 @@
-function applyOperation(a, b, operation: (x: number, y: number) => number) {
+function applyOperation(a: number, b: number, operation: (x: number, y: number) => number) {
   return operation(a, b);
 }
 
