@@ -8,7 +8,8 @@
      "test": "echo \"Error: no test specified\" && exit 1",
      "format": "prettier --write .",
      "lint": "eslint . --ext .ts",
-     "test": "vitest run"
+     "test:ej1": "vitest run ./tests/ej1.spec.ts",
+     "doc": "npx typedoc",
      "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\"",
      "run:ej2": "tsc-watch --onSuccess \"node dist/ej2.js\"",
      "run:ej3": "tsc-watch --onSuccess \"node dist/ej3.js\"",
@@ -38,6 +39,41 @@
 3. Instalamos el modo observador: npm install --save-dev tsc watch
 
 4. Instalamos el eslint npm i -g eslint
+   - Creamos el directorio eslint.config.mjs y debe contener lo siguiente
+     
+     ```
+     import globals from "globals";
+     import pluginJs from "@eslint/js";
+     import tseslint from "typescript-eslint";
+     import eslintConfigPrettier from "eslint-config-prettier";
+     import tsdoc from "eslint-plugin-tsdoc"
+
+     /** @type {import('eslint').Linter.Config[]} */
+     export default [
+       { files: ["**/*.{js,mjs,cjs,ts}"] },
+       { languageOptions: { globals: globals.node } },
+       pluginJs.configs.recommended,
+       ...tseslint.configs.recommended,
+       eslintConfigPrettier,
+       {
+         plugins:
+         {
+            tsdoc
+         }
+       },
+       {
+         rules: {
+            "tsdoc/syntax": "warn"
+         }
+       },
+       { ignores: [
+         "dist/*",
+         "docs/*",
+         "eslint.config.mjs"
+       ]
+       },
+     ];
+     ```
 
 5. npm i --save-dev prettier eslint-config-prettier
    - echo {}> .prettierrc
@@ -89,3 +125,32 @@
 
 7. Typedoc: npm i --save-dev typedoc eslint-plugin-tsdoc
    - npx typedoc (ejecutar)
+   - Añadimos comentarios con el siguiente formato
+     
+     ```
+     /**
+       * Description of the function
+       * @param - firstNumber First operand of the aditon
+       * @param - secondNumber Second operand of the adition
+       * @returns The adition of the two above numbers
+       * ```typescript
+       * add(1, 7) = 8
+       * ```
+       */
+      myfunction()
+      ```
+   
+   - Creamos un fichero typedic.json, que se debe ver así:
+     
+     ```
+     {
+      "entrypoints" {
+         "src/*.ts"
+      },
+      "out": "./docs"
+     }
+     ```
+
+8. Añadir un .gitignore con 
+   - dist
+   - node_modules
