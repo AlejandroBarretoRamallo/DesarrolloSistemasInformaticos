@@ -8,6 +8,7 @@
      "test": "echo \"Error: no test specified\" && exit 1",
      "format": "prettier --write .",
      "lint": "eslint . --ext .ts",
+     "test": "vitest run"
      "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\"",
      "run:ej2": "tsc-watch --onSuccess \"node dist/ej2.js\"",
      "run:ej3": "tsc-watch --onSuccess \"node dist/ej3.js\"",
@@ -25,6 +26,14 @@
    - Debemos activar: outDir y poner ./dist
    - Root dir y poner ./src
    - Activar la opcion "declaration": true
+   - Debemos añadir al principio : 
+     
+     ```
+     "exclude": [
+      "./tests",
+      "./node_modules",
+      "./dist"
+     ],
 
 3. Instalamos el modo observador: npm install --save-dev tsc watch
 
@@ -46,7 +55,37 @@
    ```
 
 6. Pruebas unitarias: npm i --save-dev vitest
+   - Añadimos export delante d elas funciones que queramos testear
+   - Creamos el directorio tests
+   - Hacemos un fichero.spec.ts por cada codigo fuente en test
+   - Importamos lo siguiente: 
+
+     ```
+     import {describe, expect, test} "from vitest"
+     ```
+
+   - Tambien importamos las funciones que vamos a testear
+     
+     ```
+     import {add} from "../src/basicFunctions"
+     ```
+   
+   - Para agrupar pruebas tenemos describe
+
+   ```
+   describe("add function test", () => {
+      test("add(1,8) returns the value 9", () => {
+         expect(add(1, 8)).toBe(9)
+      })
+
+      test("add(-9, 7) returns the value -2", () => {
+         expect(add(-9, 7)).toBe(-2)
+      })
+   })
+   ```
+
    - npx vitest (para ejecutar)
+   - npx vitest run(se ejcutan las pruebas solo una vez)
 
 7. Typedoc: npm i --save-dev typedoc eslint-plugin-tsdoc
    - npx typedoc (ejecutar)
