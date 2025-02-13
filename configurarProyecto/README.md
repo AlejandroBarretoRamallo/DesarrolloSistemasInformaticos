@@ -1,7 +1,7 @@
 # Creación de un proyecto en Ts
 
 1. Ejecutamos npm init --yes para crear el package.json
-   - El aparatdo de scripts debe ser similar a este
+   - El apartado de scripts debe ser similar a este
 
    ```
     "scripts": {
