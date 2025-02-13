@@ -91,7 +91,7 @@
    ```
 
 6. Pruebas unitarias: npm i --save-dev vitest
-   - Añadimos export delante d elas funciones que queramos testear
+   - Añadimos export delante de las funciones que queramos testear
    - Creamos el directorio tests
    - Hacemos un fichero.spec.ts por cada codigo fuente en test
    - Importamos lo siguiente: 
@@ -144,10 +144,8 @@
      
      ```
      {
-      "entrypoints" {
-         "src/*.ts"
-      },
-      "out": "./docs"
+       "entrypoints": ["src/*.ts"],
+       "out": "./docs"
      }
      ```
 
