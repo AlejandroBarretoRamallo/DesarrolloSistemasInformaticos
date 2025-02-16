@@ -1,0 +1,41 @@
+{
+  "name": "ejercicios",
+  "version": "1.0.0",
+  "main": "",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .ts",
+    "doc": "npx typedoc",
+    "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\"",
+    "test:ej1": "vitest run ./tests/complejos.spec.ts",
+    "run:ej2": "tsc-watch --onSuccess \"node dist/decodeResistance.js\"",
+    "test:ej2": "vitest run ./tests/decodeResistance.spec.ts",
+    "run:ej3": "tsc-watch --onSuccess \"node dist/scrabble.js\"",
+    "test:ej3": "vitest run ./tests/scrabble.spec.ts",
+    "run:ej4": "tsc-watch --onSuccess \"node dist/objectRecolection.js\"",
+    "test:ej4": "vitest run ./tests/objectRecolection.spec.ts",
+    "run:ej5": "tsc-watch --onSuccess \"node dist/spiralMatrix.js\"",
+    "test:ej5": "vitest run ./tests/spiralMatrix.spec.ts",
+    "run:ej6": "tsc-watch --onSuccess \"node dist/myMap.js\"",
+    "test:ej6": "vitest run ./tests/myMap.spec.ts",
+    "run:ej7": "tsc-watch --onSuccess \"node dist/queen.js\"",
+    "test:ej7": "vitest run ./tests/queen.spec.ts",
+    "run:ej8" : "tsc-watch --onSuccess \"node dist/roma.js\"",
+    "test:ej8": "vitest run ./tests/roma.spec.ts",
+    "run:ej10": "tsc-watch --onSuccess \"node dist/ranges.js\"",
+    "test:ej10": "vitest run ./tests/ranges.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-tsdoc": "^0.4.0",
+    "prettier": "^3.5.0",
+    "tsc": "^2.0.4",
+    "typedoc": "^0.27.7",
+    "vitest": "^3.0.5",
+    "watch": "^0.13.0"
+  }
+}
