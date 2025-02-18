@@ -152,3 +152,5 @@
 8. Añadir un .gitignore con 
    - dist
    - node_modules
+
+9. Cambair el target del compilador a ES2024 y añadir la norma de strict a true
