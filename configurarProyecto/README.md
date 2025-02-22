@@ -146,7 +146,8 @@
      ```
      {
        "entrypoints": ["src/*.ts"],
-       "out": "./docs"
+       "out": "./docs",
+       "readme": "README.md"
      }
      ```
 
