@@ -209,4 +209,12 @@
         },
       })
       ```
-    
+
+
+# Cosas a realizar por cada push
+
+- Ejecutar prettier
+- Ejecutar npm run doc
+- Hacer el push
+- Configurar el pages para que coga el /docs
+- Una vez hecho el push, actualizar el README con las pruebas superadas y volver  a hacer push
