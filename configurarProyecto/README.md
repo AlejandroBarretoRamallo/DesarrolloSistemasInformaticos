@@ -11,7 +11,8 @@
      "test:ej1": "vitest run ./tests/ej1.spec.ts",
      "doc": "npx typedoc",
      "coverage": "vitest run --coverage --coverage.include src/*",
-     "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\""
+     "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\"",
+     "test": "vitest run --coverage"
     }
    ```
 
@@ -25,7 +26,8 @@
      "exclude": [
       "./tests",
       "./node_modules",
-      "./dist"
+      "./dist",
+      "./vitest.config.ts"
      ],
 
 3. Instalamos el modo observador: npm install --save-dev tsc watch
@@ -190,4 +192,21 @@
 11. Nota: docs debe estar siempre en la raíz del repo para que pueda ser encontrado por github pages
 
 12. Uso del coveralls
-    - Debemos ejecutar vitest run --coverage --coverage.include src/*
+    - Creamos el archivo vitest.config.ts 
+    - Copiamos lo siguiente
+
+      ```
+      import { defineConfig } from 'vitest/config'
+      export default defineConfig({
+        test: {
+          include: ['tests/**/*.spec.ts'],  // Aquí especificamos tus archivos de prueba .spec.ts
+          coverage: {
+            provider: 'v8',  // Usar el recolector de cobertura V8
+            reporter: ['text', 'html'],  // Reportes en formato texto y HTML
+            include: ['src/**/*.ts'],  // Solo incluir archivos TS en src para la cobertura
+            exclude: ['**/*.spec.ts'],  // Excluir los archivos .spec.ts de la cobertura
+          },
+        },
+      })
+      ```
+    
