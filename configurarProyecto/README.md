@@ -5,23 +5,14 @@
 
    ```
     "scripts": {
-     "test": "echo \"Error: no test specified\" && exit 1",
+     "test": "vitest run",
      "format": "prettier --write .",
      "lint": "eslint . --ext .ts",
      "test:ej1": "vitest run ./tests/ej1.spec.ts",
      "doc": "npx typedoc",
      "coverage": "vitest run --coverage --coverage.include src/*",
-     "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\"",
-     "run:ej2": "tsc-watch --onSuccess \"node dist/ej2.js\"",
-     "run:ej3": "tsc-watch --onSuccess \"node dist/ej3.js\"",
-     "run:ej4": "tsc-watch --onSuccess \"node dist/ej4.js\"",
-     "run:ej5": "tsc-watch --onSuccess \"node dist/ej5.js\"",
-     "run:ej6": "tsc-watch --onSuccess \"node dist/ej6.js\"",
-     "run:ej7": "tsc-watch --onSuccess \"node dist/ej7.js\"",
-     "run:ej8": "tsc-watch --onSuccess \"node dist/ej8.js\"",
-     "run:ej9": "tsc-watch --onSuccess \"node dist/ej9.js\"",
-     "run:ej10": "tsc-watch --onSuccess \"node dist/ej10.js\""
-    },
+     "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\""
+    }
    ```
 
 2. Ejecutamos tsc --init para crear la configuracion del compilador
@@ -194,7 +185,9 @@
             run: npm test
       ```
 
-      - Ahora cada vez que hagamos push se ejecutan las pruebas.En github, podemos obtener un enlace que podemos pegar en nuestro
-        readme para adjuntar un enlace a las Pruebas.
+      - Ahora cada vez que hagamos push se ejecutan las pruebas.En github, podemos obtener un enlace que podemos pegar en nuestro readme para adjuntar un enlace a las Pruebas.
 
 11. Nota: docs debe estar siempre en la raíz del repo para que pueda ser encontrado por github pages
+
+12. Uso del coveralls
+    - Debemos ejecutar vitest run --coverage --coverage.include src/*
