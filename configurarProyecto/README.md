@@ -194,4 +194,6 @@
       ```
 
       - Ahora cada vez que hagamos push se ejecutan las pruebas.En github, podemos obtener un enlace que podemos pegar en nuestro
-        readme para adjuntar un enlace a las Pruebas
+        readme para adjuntar un enlace a las Pruebas.
+
+11. Nota a la hora de indicar que el deploy se haga a partir de docs: si docs no esta en la riaz del proyecto, hay que modificar el _config.yml
