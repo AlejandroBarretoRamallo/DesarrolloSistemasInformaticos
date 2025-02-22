@@ -10,6 +10,7 @@
      "lint": "eslint . --ext .ts",
      "test:ej1": "vitest run ./tests/ej1.spec.ts",
      "doc": "npx typedoc",
+     "coverage": "vitest run --coverage --coverage.include src/*",
      "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\"",
      "run:ej2": "tsc-watch --onSuccess \"node dist/ej2.js\"",
      "run:ej3": "tsc-watch --onSuccess \"node dist/ej3.js\"",
@@ -154,3 +155,43 @@
    - node_modules
 
 9. Cambair el target del compilador a ES2024 y añadir la norma de strict a true
+
+10. Configurar github actions
+    
+    - Creamos un directorio .github/workflows
+    - Creamos un archivo dentro de dicho directorio: ci.yml
+    - Debe tener el siguiente contenido: 
+
+      ```
+      name: CI tests
+
+      on:
+        push:
+          branches: [ "main" ]
+        pull_request:
+          branches: [ "main" ]
+      
+      jobs:
+        build:
+      
+          runs-on: ubuntu-latest
+      
+          strategy:
+            matrix:
+              node-version: [18.x, 20.x, 22.x, 23.x]
+      
+          steps:
+          - name: Cloning repo
+            uses: actions/checkout@v4
+          - name: Use Node.js ${{ matrix.node-version }}
+            uses: actions/setup-node@v4
+            with:
+              node-version: ${{ matrix.node-version }}
+          - name: Installing dependencies
+            run: npm ci
+          - name: Running tests
+            run: npm test
+      ```
+
+      - Ahora cada vez que hagamos push se ejecutan las pruebas.En github, podemos obtener un enlace que podemos pegar en nuestro
+        readme para adjuntar un enlace a las Pruebas
