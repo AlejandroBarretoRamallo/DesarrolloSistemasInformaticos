@@ -118,17 +118,23 @@ export class combat {
 }
 
 
-let pikachu = new Pokemon("Pikachu", pokemonType.electrico, 100, [
+let pikachu = new Pokemon("Pikachu", pokemonType.electrico, 1000, [
   ["ataque", 50],
   ["defensa", 30],
   ["velocidad", 60],
-  ["HP", 100],
+  ["HP", 1000],
 ]);
-let Charmander = new Pokemon("Charmander", pokemonType.fuego, 100, [
+let Charmander = new Pokemon("Charmander", pokemonType.fuego, 1000, [
   ["ataque", 50],
   ["defensa", 30],
   ["velocidad", 60],
-  ["HP", 100],
+  ["HP", 1000],
 ]);
-let combate = new combat(pikachu, Charmander);
+let ryquaza = new Pokemon("Ryquaza", pokemonType.electrico, 1000, [
+  ["ataque", 80],
+  ["defensa", 50],
+  ["velocidad", 100],
+  ["HP", 1010],
+]);
+let combate = new combat(Charmander, ryquaza);
 combate.start();

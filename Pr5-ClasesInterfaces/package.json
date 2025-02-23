@@ -14,7 +14,8 @@
     "test:pokemon": "vitest run ./tests/pokemon.spec.ts",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
-    "test:musica": "vitest run ./tests/bibliotecaMusical.spec.ts"
+    "test:musica": "vitest run ./tests/bibliotecaMusical.spec.ts",
+    "pokemon": "tsc-watch --onSuccess \"node dist/ejercicio1/combat.js\""
   },
   "keywords": [],
   "author": "",
