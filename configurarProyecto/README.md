@@ -13,13 +13,19 @@
      "coverage": "vitest run --coverage --coverage.include src/*",
      "run:ej1": "tsc-watch --onSuccess \"node dist/complejos.js\"",
      "test": "vitest run --coverage"
-    }
+    },
+    "type": "commonjs" | "module",
    ```
+
+   En type podemos poner commonjs(como lo hemos hecho normalmente) o module si vamos a usar node16.
+   Si vamos a usar el otro, debemos especificar en los imports .js
 
 2. Ejecutamos tsc --init para crear la configuracion del compilador
    - Debemos activar: outDir y poner ./dist
    - Root dir y poner ./src
    - Activar la opcion "declaration": true
+   - Cambair el target a ES2024
+   - Si cambiamos el type, debemos cambiar tambien el module por node16
    - Debemos añadir al principio : 
      
      ```
@@ -29,6 +35,7 @@
       "./dist",
       "./vitest.config.ts"
      ],
+     ```
 
 3. Instalamos el modo observador: npm install --save-dev tsc watch
 
