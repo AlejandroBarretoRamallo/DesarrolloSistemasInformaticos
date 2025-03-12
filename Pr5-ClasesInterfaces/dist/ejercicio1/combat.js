@@ -117,5 +117,3 @@ let ryquaza = new pokemon_1.Pokemon("Ryquaza", pokemon_1.pokemonType.electrico, 
     ["velocidad", 100],
     ["HP", 1010],
 ]);
-let combate = new combat(Charmander, ryquaza);
-combate.start();

@@ -224,4 +224,6 @@
 - Ejecutar npm run doc
 - Hacer el push
 - Configurar el pages para que coga el /docs
-- Una vez hecho el push, actualizar el README con las pruebas superadas y volver  a hacer push
+- Una vez hecho el push, actualizar el README con las pruebas superadas
+- Generar de nuevo la documentación
+- Ejecutar push

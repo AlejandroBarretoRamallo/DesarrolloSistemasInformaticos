@@ -26,8 +26,10 @@ class BibliotecaMusical {
         else {
             let discos = '';
             let canciones = '';
+            let artistas = '';
             this.biblioteca.forEach(artista => {
                 let discografia = '';
+                artistas += artista.nombre + ', ';
                 artista.discografia.forEach(disco => {
                     discografia += disco.nombre + ', ';
                     disco.canciones.forEach(cancion => {
@@ -39,12 +41,14 @@ class BibliotecaMusical {
             });
             discos = discos.slice(0, -2);
             canciones = canciones.slice(0, -2);
+            artistas = artistas.slice(0, -2);
             let datosBiblioteca = {
                 numeroArtistas: this.biblioteca.length,
                 discos: discos,
                 numeroDiscos: this.biblioteca.length,
                 canciones: canciones,
-                numeroCanciones: this.biblioteca.length
+                numeroCanciones: this.biblioteca.length,
+                artistas: artistas
             };
             console.table(datosBiblioteca);
         }
@@ -237,5 +241,6 @@ class BibliotecaMusical {
     }
 }
 exports.BibliotecaMusical = BibliotecaMusical;
+//probar la funcion de bsucar una cancion
 let biblioteca = new BibliotecaMusical([new artista_1.Artista("Bad bunny", 1, [new discografia_1.Disco("x100pre", 2013, [new cancion_1.Cancion("Safaera", 240, ["trap"], true, 10000)])])]);
 biblioteca.mostrarBiblioteca();

@@ -38,8 +38,10 @@ export class BibliotecaMusical implements bibliotecaMusical {
     else {
       let discos: string = ''
       let canciones: string = ''
+      let artistas: string = '' 
       this.biblioteca.forEach(artista => {
         let discografia: string = ''
+        artistas += artista.nombre + ', '
         artista.discografia.forEach(disco => {
           discografia += disco.nombre + ', '
           disco.canciones.forEach(cancion => {
@@ -51,12 +53,14 @@ export class BibliotecaMusical implements bibliotecaMusical {
       })
       discos = discos.slice(0, -2)
       canciones = canciones.slice(0, -2)
+      artistas = artistas.slice(0, -2)
       let datosBiblioteca = {
         numeroArtistas: this.biblioteca.length,
         discos: discos,
         numeroDiscos: this.biblioteca.length,
         canciones: canciones,
-        numeroCanciones: this.biblioteca.length
+        numeroCanciones: this.biblioteca.length,
+        artistas: artistas
       }
       console.table(datosBiblioteca)
     }
@@ -257,6 +261,6 @@ export class BibliotecaMusical implements bibliotecaMusical {
   }
 }
 
+//probar la funcion de bsucar una cancion
 let biblioteca = new BibliotecaMusical([new Artista("Bad bunny", 1, [new Disco("x100pre", 2013, [new Cancion("Safaera", 240, ["trap"], true, 10000)])])])
 biblioteca.mostrarBiblioteca()
-
