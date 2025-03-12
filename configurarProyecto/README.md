@@ -204,18 +204,60 @@
 
       ```
       import { defineConfig } from 'vitest/config'
+
       export default defineConfig({
         test: {
-          include: ['tests/**/*.spec.ts'],  // Aquí especificamos tus archivos de prueba .spec.ts
+          include: ['tests/**/*.spec.ts'],  // Aquí especificamos tus archivos de       prueba .spec.ts
           coverage: {
             provider: 'v8',  // Usar el recolector de cobertura V8
-            reporter: ['text', 'html'],  // Reportes en formato texto y HTML
-            include: ['src/**/*.ts'],  // Solo incluir archivos TS en src para la cobertura
-            exclude: ['**/*.spec.ts'],  // Excluir los archivos .spec.ts de la cobertura
+            reporter: ['text', 'html', 'lcov', 'cobertura'],  // Agregar 'lcov' y       'cobertura'
+            include: ['src/**/*.ts', 'src/*.ts'],  
+            exclude: ['**/*.spec.ts'],  
           },
         },
       })
+
       ```
+
+13. Poner un coverage en github actions:
+    - Clonamos el ci.yml y cambiamos unicamente el nombre del archivo a coverals
+    - Copiamos lo siguiente:
+      
+      ```
+      name: Coveralls
+
+      on:
+        push:
+          branches: [ "main" ]
+        pull_request:
+          branches: [ "main" ]
+      
+      jobs:
+        build:
+          runs-on: ubuntu-latest
+      
+          steps:
+            - name: Cloning repo
+              uses: actions/checkout@v4
+      
+            - name: Use Node.js 23.x
+              uses: actions/setup-node@v4
+              with:
+                node-version: 23.x
+      
+            - name: Installing dependencies
+              run: npm ci
+      
+            - name: Generating coverage information
+              run: npm run coverage
+      
+            - name: Coveralls Github Action
+              uses: coverallsapp/github-action@v2.3.6
+              with:
+                github-token: ${{ secrets.GITHUB_TOKEN }}
+      
+      ```
+
 
 
 # Cosas a realizar por cada push
@@ -226,4 +268,9 @@
 - Configurar el pages para que coga el /docs
 - Una vez hecho el push, actualizar el README con las pruebas superadas
 - Generar de nuevo la documentación
+- Registrar nuestro repo en coveralls.io(debemos tenerlo publico)
+- Elegimos el repo en el apartado de mis repos
+- Hacemos un push, y cuando se realice el github actions, vovlemos a la pagina
+- Copiamos el badge en markdown y lo pegamos en el readme
+- Volvemos a generar la documentacion
 - Ejecutar push
