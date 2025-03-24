@@ -258,6 +258,46 @@
       
       ```
 
+# Activar sonarqube
+
+- Ejecutamos touch sonarqube-cloud.yml
+- Copiamos el siguiente contenido: 
+  
+  ```
+  name: SonarQube-Cloud 
+
+  on:
+    push:
+      branches: [ main ]
+    pull_request:
+      branches: [ main ]
+  
+  jobs:
+    sonarqube-cloud:
+      name: SonarQube Cloud
+      runs-on: ubuntu-latest
+      steps:
+        - name: Cloning repo
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+        - name: SonarQube Scan
+          uses: SonarSource/sonarqube-scan-action@v5
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  ```
+
+- Iniciar sesion en sonar qube
+- Crear una organizacion si no esta ya creada
+- Elegimos el repo deseado
+- Ajustes>administracion>metodoDeAnalisis
+- Elegimos wiht github actions
+- Nos saldran los pasos a seguir
+- Añadimos el archiivo que nos genere en lso workflows
+- Añadimos el segundo archivo que nos va a generar en la raiz del proyecto
+- Descomentamos la parte de .sources y le ponemos src
+- Añadir el badge al readme
 
 
 # Cosas a realizar por cada push
