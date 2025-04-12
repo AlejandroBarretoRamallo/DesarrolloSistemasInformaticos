@@ -258,6 +258,13 @@
       
       ```
 
+14. Si queremos hacer peticiones https:
+    
+    ```
+    $npm i request
+    $npm i @types/request
+    ```
+
 # Activar sonarqube
 
 - Ejecutamos touch sonarqube-cloud.yml
