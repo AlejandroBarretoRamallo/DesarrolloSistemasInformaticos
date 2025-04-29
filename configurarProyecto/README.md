@@ -321,3 +321,61 @@
 - Copiamos el badge en markdown y lo pegamos en el readme
 - Volvemos a generar la documentacion
 - Ejecutar push
+
+# Creacion de una API Rest usando express y mongodb
+
+- Instalación de express
+  
+  ```
+  npm i express
+  npm i --save-dev @types/express
+  ```
+
+- Instalamos MONGODB
+  
+  ```
+  wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2404-8.0.8.tgz
+  ```
+
+- Ahora debemos descomprimir el arhcivo y renombrarlo usando:
+  
+  ```
+  tar xzvf mongodb-linux-x86_64-ubuntu2404-8.0.8.tgz 
+  rm mongodb-linux-x86_64-ubuntu2404-8.0.8.tgz
+  mv mongodb-linux-x86_64-ubuntu2404-8.0.8/ mongodb
+  ```
+
+- Para ejecutarlo, creamos una carpeta para almacenar la info del servidor y arrancarlo
+  
+  ```
+  mkdir mongodb-data
+  sudo /home/usuario/mongodb/bin/mongod --dbpath /home/usuario/mongodb-data/
+  ```
+
+- También es conveniente instalar su extension para el visual
+
+- Instalamos el modulo
+  
+  ```
+  npm i mongodb
+  ```
+
+- Esa carpeta de mongoDb lo razonable seria incluirla ene l src del proyecto, y ademas debemos
+  crear un archivo.ts en el /src/db que se llame mongoose.ts y contenga algo similar a esto:
+
+  ```
+  import mongoose from 'mongoose';
+
+  // Crear conexiones separadas para cada base de datos
+  export const assetsDB = mongoose.createConnection('mongodb://127.0.0.1:27017/assets');
+  
+  export const clientsDB = mongoose.createConnection('mongodb://127.0.0.1:27017/clients');
+  
+  export const tradersDB = mongoose.createConnection('mongodb://127.0.0.1:27017/traders');
+  
+  // Manejo de eventos de conexión
+  assetsDB.on('connected', () => console.log('Connected to assets database'));
+  clientsDB.on('connected', () => console.log('Connected to clients database'));
+  tradersDB.on('connected', () => console.log('Connected to traders database'));
+  ```
+
