@@ -379,3 +379,25 @@
   tradersDB.on('connected', () => console.log('Connected to traders database'));
   ```
 
+# Establecer el entorno de ejecución
+
+- Creamos un directorio config en la raíz de nuestro proyecto
+- Creamos dentr del mismo un dev.env
+- Ponemos algo como esto 
+  
+  ```
+  PORT=3000
+  MONGODB_URL=mongodb://127.0.0.1:27017/notes-api
+  ```
+
+- Modificamos el apartado de scripts del package.json y ponemos algo así
+
+  ```
+  {
+  ...
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"env-cmd -f ./config/dev.env node dist/index.js\"",
+  ...
+  ```
+
+- 
