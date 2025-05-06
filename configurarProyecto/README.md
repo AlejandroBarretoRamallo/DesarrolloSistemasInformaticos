@@ -400,4 +400,127 @@
   ...
   ```
 
-- 
+- En este caso, habria que cambair los 3 archivos de github actions y poner estos otros:
+
+```
+name: CI Tests
+  
+  on:
+    push:
+      branches: [ "main" ]
+    pull_request:
+      branches: [ "main" ]
+  
+  jobs:
+    build:
+  
+      runs-on: ubuntu-latest
+  
+      strategy:
+        matrix:
+          node-version: [20.x, 21.x, 22.x, 23.x]
+          mongodb-version: ['6.0', '7.0', '8.0']
+  
+      steps:
+      - name: Git checkout
+        uses: actions/checkout@v4
+  
+      - name: Use Node.js $
+        uses: actions/setup-node@v4
+        with:
+          node-version: $
+          cache: 'npm'
+  
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.12.0
+        with:
+          mongodb-version: $
+  
+      - name: Install dependencies 
+        run: npm ci
+      
+      - name: Running tests
+        run: npm test
+```
+
+```
+name: Coveralls
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v4
+
+    - name: Use Node.js 23.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 23.x
+        cache: 'npm'
+
+    - name: Start MongoDB 8.0
+      uses: supercharge/mongodb-github-action@1.12.0
+      with:
+        mongodb-version: '8.0'
+
+    - name: Install dependencies 
+      run: npm ci
+    
+    - name: Generate coverage info
+      run: npm run coverage 
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2.3.6
+      with:
+        github-token: $
+```
+
+```
+name: SonarQube-Cloud 
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  sonarqube:
+    name: SonarQube
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 23.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23.x
+          cache: 'npm'
+
+      - name: Start MongoDB 8.0
+        uses: supercharge/mongodb-github-action@1.12.0
+        with:
+          mongodb-version: '8.0'
+
+      - name: Install dependencies 
+        run: npm ci 
+
+      - name: Generate coverage info
+        run: npm run coverage 
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          GITHUB_TOKEN: $
+          SONAR_TOKEN: $
+```
