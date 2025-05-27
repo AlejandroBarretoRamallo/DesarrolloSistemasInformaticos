@@ -1,0 +1,10 @@
+import { AssetsDB } from "./AssetsDB.js";
+import { TradersDB } from "./tradersDB.js";
+import { ClientsDB } from './clientsDB.js';
+export declare function addClient(db: ClientsDB): Promise<void>;
+export declare function addAsset(db: AssetsDB): Promise<void>;
+export declare function addTrader(db: TradersDB): Promise<void>;
+export declare function listGoods(db: AssetsDB): Promise<void>;
+export declare function listTraders(db: TradersDB): Promise<void>;
+export declare function listClients(db: ClientsDB): Promise<void>;
+export declare function mainMenu(assetsDB: AssetsDB, tradersDB: TradersDB, clientsDB: ClientsDB): Promise<void>;

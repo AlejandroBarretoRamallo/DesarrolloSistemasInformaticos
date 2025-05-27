@@ -524,3 +524,9 @@ jobs:
           GITHUB_TOKEN: $
           SONAR_TOKEN: $
 ```
+
+# Ejecutar en local
+
+- node dist/index.js
+
+- mongodb/bin/mongodb --dbpath mongodb-data/
